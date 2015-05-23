@@ -1,0 +1,10 @@
+0 Moneda Valor: 86 Peso: 135
+1 Collar Valor: 2045 Peso: 933
+2 Collar Valor: 2600 Peso: 739
+3 Collar Valor: 3809 Peso: 810
+4 Collar Valor: 3842 Peso: 614
+5 Corona Valor: 1240 Peso: 2770
+6 Corona Valor: 8708 Peso: 2023
+7 Anillo Valor: 189 Peso: 233
+8 Anillo Valor: 129 Peso: 279
+9 Anillo Valor: 175 Peso: 223

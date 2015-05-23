@@ -1,0 +1,4 @@
+0 Moneda Valor: 86 Peso: 135
+1 Collar Valor: 2045 Peso: 933
+Capacidad: 1791
+Ganancia: 2131

@@ -102,6 +102,10 @@
     </ClCompile>
     <ClCompile Include="Tesoro.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="pirata.txt" />
+    <Text Include="tesoro.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -4,8 +4,9 @@
 
 Pirata::Pirata() {
 	capacidad = Util::random(Constantes::pirataCapacidadMinima,
-			Constantes::pirataCapacidadMaxima);
+		Constantes::pirataCapacidadMaxima);
 	mejorGanancia = 0;
+	capacidadAlcanzada = 0;
 	mejorSolucion = 0;
 }
 
@@ -36,7 +37,8 @@ void Pirata::saquear(Tesoro t) {
 			archivo << *tesoros[i];
 		}
 	}
-	archivo << "Capacidad: " << capacidad << endl;
+	archivo << "Capacidad Maxima: " << capacidad << endl;
+	archivo << "Capacidad Alcanzada: " << capacidadAlcanzada << endl;
 	archivo << "Ganancia: " << mejorGanancia << endl;
 	archivo.close();
 
@@ -44,24 +46,30 @@ void Pirata::saquear(Tesoro t) {
 }
 
 void Pirata::saquearRec(Elemento** tesoros, bool* solucion, int n, int actual,
-		int pesoActual, int gananciaActual) {
+	int pesoActual, int gananciaActual) {
 
-	if (gananciaActual > mejorGanancia) {
+	if (mejorGanancia < gananciaActual && pesoActual < capacidad) {
 		delete mejorSolucion;
 		mejorSolucion = Util::copyVector(solucion, n);
+		capacidadAlcanzada = pesoActual;
 		mejorGanancia = gananciaActual;
 	}
 
 	if (actual < n) {
-		for (int i = 0; i < 2; ++i) {
-			solucion[actual] = i % 2 == 0;
-			int nuevoPeso = pesoActual + tesoros[actual]->getPeso();
-			int nuevaGanancia = gananciaActual + tesoros[actual]->getValor();
-			if (nuevoPeso <= capacidad) {
-				saquearRec(tesoros, solucion, n, actual + 1, nuevoPeso,
-						nuevaGanancia);
-			}
-		}
+
+		// No tomar el elemento
+		saquearRec(tesoros, solucion, n, actual + 1, pesoActual,
+			gananciaActual);
+
+		// Tomar el elemento
+		int nuevoPeso = pesoActual + tesoros[actual]->getPeso();
+		int nuevaGanancia = gananciaActual + tesoros[actual]->getValor();
+		solucion[actual] = true;
+		saquearRec(tesoros, solucion, n, actual + 1, nuevoPeso,
+			nuevaGanancia);
+
+		// Dejarlo sin tomar para el llamado anterior
+		solucion[actual] = false;
 	}
 
 }

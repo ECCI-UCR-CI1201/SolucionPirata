@@ -10,6 +10,7 @@ Corona::Corona(int id) : Elemento(id) {
 Corona::~Corona() {
 }
 
-string Corona::getNombre() const {
-	return "Corona";
+void Corona::imprimir(ostream & out) const {
+	out << id << " Corona Valor: " << valor << " Peso: "
+		<< peso << endl;
 }

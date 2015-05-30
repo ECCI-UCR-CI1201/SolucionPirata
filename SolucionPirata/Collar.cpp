@@ -10,6 +10,7 @@ Collar::Collar(int id) : Elemento(id) {
 Collar::~Collar() {
 }
 
-string Collar::getNombre() const {
-	return "Collar";
+void Collar::imprimir(ostream & out) const {
+	out << id << " Collar Valor: " << valor << " Peso: "
+		<< peso << endl;
 }

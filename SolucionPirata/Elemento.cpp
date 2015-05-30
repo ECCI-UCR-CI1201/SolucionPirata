@@ -14,12 +14,11 @@ int Elemento::getPeso() {
 }
 
 Elemento::Elemento(int id) :
-		id(id), valor(0), peso(0) {
+id(id), valor(0), peso(0) {
 }
 
-ostream& operator <<(ostream& out, const Elemento & e) {
-	out << e.id << " " << e.getNombre() << " Valor: " << e.valor << " Peso: "
-			<< e.peso << endl;
+ostream& operator<<(ostream& out, const Elemento & e) {
+	e.imprimir(out);
 	return out;
 }
 

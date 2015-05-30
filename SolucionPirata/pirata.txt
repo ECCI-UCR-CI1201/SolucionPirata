@@ -1,4 +1,6 @@
-0 Moneda Valor: 86 Peso: 135
-1 Collar Valor: 2045 Peso: 933
-Capacidad: 1791
-Ganancia: 2131
+8 Collar Valor: 3530 Peso: 673
+20 Anillo Valor: 183 Peso: 248
+22 Anillo Valor: 194 Peso: 212
+Capacidad Maxima: 1151
+Capacidad Alcanzada: 1133
+Ganancia: 3907

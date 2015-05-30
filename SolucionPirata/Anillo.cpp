@@ -10,6 +10,7 @@ Anillo::Anillo(int id) : Elemento(id) {
 Anillo::~Anillo() {
 }
 
-string Anillo::getNombre() const {
-	return "Anillo";
+void Anillo::imprimir(ostream & out) const {
+	out << id << " Anillo Valor: " << valor << " Peso: "
+		<< peso << endl;
 }

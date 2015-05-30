@@ -8,6 +8,7 @@ class Pirata {
 private:
 	int capacidad;
 	int mejorGanancia;
+	int capacidadAlcanzada;
 	bool * mejorSolucion;
 
 public:

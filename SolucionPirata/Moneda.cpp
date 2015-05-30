@@ -10,6 +10,7 @@ Moneda::Moneda(int id) : Elemento(id) {
 Moneda::~Moneda() {
 }
 
-string Moneda::getNombre() const {
-	return "Moneda";
+void Moneda::imprimir(ostream & out) const {
+	out << id << " Moneda Valor: " << valor << " Peso: "
+		<< peso << endl;
 }

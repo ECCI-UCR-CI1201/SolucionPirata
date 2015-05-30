@@ -11,15 +11,14 @@ class Elemento {
 
 protected:
 	int id, valor, peso;
+	virtual void imprimir(ostream &) const = 0;
 
 public:
 	Elemento(int);
+
 	virtual ~Elemento();
-
-	int getValor();
-	int getPeso();
-	virtual string getNombre() const = 0;
-
+	virtual int getValor();
+	virtual int getPeso();
 };
 
 ostream & operator<<(ostream &, const Elemento &);
